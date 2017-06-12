@@ -1,7 +1,19 @@
-<li *ngFor="let product of products">
-  <div *ngIf="product.opis == 'promocja'">PROMO!</div>
-  {{ product.tytul}} - {{ product.opis }}. Cena: {{ product.cena }}
-</li>
+
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Produkt</th>
+    <th>Opis</th>
+    <th>Cena</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <div *ngIf="product.opis == 'promocja'">PROMO!</div>
+    <td>{{ product.prodId }}</td>
+    <td>{{ product.tytul}}</td>
+    <td>{{ product.opis }}</td>
+    <td>{{ product.cena }}</td>
+  </tr>
+</table>
 
 <form [formGroup]="productForm" (ngSubmit)="addProduct($event)">
   <div class="form-group">

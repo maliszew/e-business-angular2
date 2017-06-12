@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
+// import { ProductListComponent } from './product/productsList.component';
+// import { ProductAddComponent } from './product/productAdd.component';
 import {RouterModule} from "@angular/router";
 import {ProductService} from "./product/product.service";
 
