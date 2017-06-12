@@ -10,12 +10,20 @@ import { ProductComponent } from './product/product.component';
 // import { ProductAddComponent } from './product/productAdd.component';
 import {RouterModule} from "@angular/router";
 import {ProductService} from "./product/product.service";
+import { HomeComponent } from './home/home.component';
+import { AddProductComponent } from './product/add-product/add-product.component';
+import { UpdateProductComponent } from './product/update-product/update-product.component';
+import { ProductsListComponent } from './product/products-list/products-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent
+    ProductComponent,
+    HomeComponent,
+    AddProductComponent,
+    UpdateProductComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
@@ -23,8 +31,9 @@ import {ProductService} from "./product/product.service";
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '.', component: AppComponent},
+      { path: '', component: HomeComponent},
       { path: 'products', component: ProductComponent},
+      { path: 'product/add', component: AddProductComponent },
       { path: 'moreparams/:tytul/:opis', component: ProductComponent}
       ])
   ],
