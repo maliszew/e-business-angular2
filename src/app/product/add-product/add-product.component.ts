@@ -18,16 +18,20 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {
     this.productForm = new FormGroup({
       tytul: new FormControl('tytul', Validators.required),
-      opis: new FormControl('opis', Validators.required)
+      opis: new FormControl('opis', Validators.required),
+      cena: new FormControl('cena', Validators.required),
+      imgUrl: new FormControl('imgUrl', Validators.required),
+      kategoriaId: new FormControl('kategoriaId', Validators.required),
+      prodId: new FormControl('prodId', Validators.required),
     });
 
     console.log(this.route.snapshot.params);
   }
 
-  addProduct(event) {
+  addNewProduct(event) {
     console.log(event);
     console.log(this.productForm.value);
-    this.productService.sendToPlay(this.productForm.value);
+    this.productService.addProduct(this.productForm.value);
   }
 
 

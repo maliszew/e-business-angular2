@@ -19,7 +19,7 @@ export class ProductService {
       .map(response => <Product[]>response.json());
   }
 
-  sendToPlay(formData) {
+  addProduct(formData) {
     const serializedForm = JSON.stringify(formData);
     // console.log(serializedForm);
 
