@@ -1,3 +1,61 @@
-<p>
-  update-product works!
-</p>
+<div class="account-in">
+  <div class="register-but">
+    <form [formGroup]="productForm" (ngSubmit)="updateExistingProduct($event)">
+      <div class="register-top-grid">
+        <h2>Update existing product</h2>
+
+        <div class="form-group">
+          <span>Product name<label>*</label></span>
+          <input id="tytul" formControlName="tytul" type="text" placeholder="Name..." class=".form-control">
+        </div>
+        <div class="form-group">
+          <span>Product description<label>*</label></span>
+          <textarea id="opis" formControlName="opis" placeholder="Desc..." class=".form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <span>Price<label>*</label></span>
+          <input id="cena" formControlName="cena" type="text" placeholder="Price..." class=".form-control">
+        </div>
+        <div class="form-group">
+          <span>Image filename<label>*</label></span>
+          <input id="imgUrl" formControlName="imgUrl" type="text" placeholder="Image filename..." class=".form-control">
+        </div>
+        <div class="form-group">
+          <span>Category ID<label>*</label></span>
+          <input id="kategoriaId" formControlName="kategoriaId" type="number" placeholder="Category ID..." class=".form-control">
+        </div>
+        <div class="form-group">
+          <span>Product ID<label>*</label></span>
+          <input id="prodId" formControlName="prodId" type="number" placeholder="Product ID..." class=".form-control">
+        </div>
+
+        <div class="clearfix"> </div>
+      </div>
+      <input type="submit" value="submit">
+    </form>
+    <div class="clearfix"> </div>
+    <div class="register-but">
+      <form>
+
+        <div class="clearfix"> </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<form [formGroup]="productForm" (ngSubmit)="addNewProduct($event)">
+
+    <h2>Add new product</h2>
+
+    <div class="form-group">
+    <label for="tytul">Tytuł</label><input id="tytul" formControlName="tytul" type="text" placeholder="Product name" class=".form-control">
+  </div>
+  <div class="form-group">
+    <label for="opis">Opis</label><textarea id="opis" formControlName="opis" placeholder="Product description" class=".form-control"></textarea>
+  </div>
+
+  <button type="submit">Add</button>
+</form>
+-->

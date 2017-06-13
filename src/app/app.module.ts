@@ -32,8 +32,12 @@ import { ProductsListComponent } from './product/products-list/products-list.com
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
-      { path: 'products', component: ProductComponent},
+      { path: 'products2', component: ProductComponent},
       { path: 'product/add', component: AddProductComponent },
+      { path: 'product/update', component: UpdateProductComponent },
+      { path: 'products', component: ProductsListComponent },
+      { path: 'product/:id', component: ProductComponent },
+      // { path: 'category/:id', component: },
       { path: 'moreparams/:tytul/:opis', component: ProductComponent}
       ])
   ],

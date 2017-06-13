@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductService} from '../product.service';
+import {Product} from '../product';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-products-list',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsListComponent implements OnInit {
 
-  constructor() { }
+  products: Product[];
+
+  constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.productService.getProducts().subscribe(data => this.products = data);
   }
 
 }
