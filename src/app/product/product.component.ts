@@ -22,7 +22,10 @@ export class ProductComponent implements OnInit {
       this.id = +params['id'];
     });
 
-    this.productService.getOneProduct(this.id).subscribe(data => this.product = data);
+    this.productService.getOneProduct(this.id).subscribe(
+      data => {this.product = data,
+      console.log("--->", data)},
+      error => console.log(error, " ---"));
 
     console.log("id: " + this.id);
     console.log("product:");

@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
+import { LogInComponent } from "./login/login.component";
 import { ProductComponent } from './product/product.component';
 // import { ProductListComponent } from './product/productsList.component';
 // import { ProductAddComponent } from './product/productAdd.component';
@@ -14,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './product/add-product/add-product.component';
 import { UpdateProductComponent } from './product/update-product/update-product.component';
 import { ProductsListComponent } from './product/products-list/products-list.component';
+import {OAuthService} from "./oauth.service";
+import {LogInService} from "./login/login.service"
 
 
 @NgModule({
@@ -23,7 +26,8 @@ import { ProductsListComponent } from './product/products-list/products-list.com
     HomeComponent,
     AddProductComponent,
     UpdateProductComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
@@ -37,11 +41,12 @@ import { ProductsListComponent } from './product/products-list/products-list.com
       { path: 'product/update', component: UpdateProductComponent },
       { path: 'products', component: ProductsListComponent },
       { path: 'product/:id', component: ProductComponent },
+      { path: 'login', component: LogInComponent },
       // { path: 'category/:id', component: },
       { path: 'moreparams/:tytul/:opis', component: ProductComponent}
       ])
   ],
-  providers: [ProductService],
+  providers: [ProductService, OAuthService, LogInService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

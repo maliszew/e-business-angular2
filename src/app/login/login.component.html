@@ -1,0 +1,34 @@
+<div *ngIf="user_data" class="row caption">
+  <div class="col-sm-6">
+    <div class="row profile-title">
+      <p class="profile-avatar"><img class="thumbnail" src="{{user_data.avatarURL}}"></p>
+      <div><h2>My data</h2></div>
+    </div>
+    <div class="row">
+      <p class="col-md-6"><b>First name:</b></p>
+      <p class="col-md-6">{{user_data.firstName}}</p>
+    </div>
+    <div class="row">
+      <p class="col-md-6"><b>Last name:</b></p>
+      <p class="col-md-6">{{user_data.lastName}}</p>
+    </div>
+    <div class="row">
+      <p class="col-md-6"><b>E-mail:</b></p>
+      <p class="col-md-6">{{user_data.email}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    Test Login
+
+    <div class="social-links">
+      <p>OAuth login:</p>
+      <a class="social-auth-link" (click)="authenticate('google')">
+        <img src="assets/images/google.png" alt="Google">
+      </a>
+    </div>
+  </div>
+</div>
+
